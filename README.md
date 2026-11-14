@@ -49,6 +49,20 @@ This project uses:
 * Validated consistency: of 8,544 rows with `quantity`, `price_per_unit`, and `total_spent` all present, 0 had a total that disagreed with quantity × price.
 * Analysis ready (note that rows with one or more NULLs are retained in this set).
 
+### Missing Values: Raw vs. Clean
+
+| Column           | Missing in raw | Recovered | Missing after cleaning |
+| ---------------- | -------------- | --------- | ---------------------- |
+| `item`           | 969            | 0         | 969                    |
+| `quantity`       | 479            | 441       | 38                     |
+| `price_per_unit` | 533            | 495       | 38                     |
+| `total_spent`    | 502            | 462       | 40                     |
+| `payment_method` | 3,178          | 0         | 3,178                  |
+| `location`       | 3,961          | 0         | 3,961                  |
+| `transaction_date` | 460          | 0         | 460                    |
+| **Total**        | **10,082**     | **1,398** | **8,684**              |
+
+Remaining nulls are cells that can't be derived from other columns, so they were left as NULL instead of guessed. Analyses below exclude rows missing the relevant field.
 
 ## Light Analysis
 Calendar year: 2023
