@@ -134,3 +134,10 @@ Omits transactions without payment method (3,178 of 10,000).
 | Cash           | 2,258           |
 
 ![Common Payment Methods by Number of Sales](reports/figures/payment_methods.png)
+
+### Key Takeaways
+* **Revenue was flat:** monthly revenue stayed between $6,633.50 (February) and $7,350.00 (June), with no clear seasonal pattern.
+* **Locations and items are close:** in-store revenue ($27,127.00) was about 2% above takeaway ($26,487.50) among rows with a location. Coffee led at 3,534 units and Cookie trailed at 3,228, a gap under 10%.
+* **Payment methods are nearly even:** about a third each for digital wallet, credit card, and cash.
+* **Typical transaction:** about $8.93 on average.
+* **Caveat:** this is synthetic data, so the evenness is expected and not a business finding. The main result is the cleaning and validation: 3,256 placeholders converted, 1,398 values recovered, and 0 inconsistent totals found. Nulls that couldn't be derived were left as NULL instead of guessed.
