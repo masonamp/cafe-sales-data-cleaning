@@ -70,7 +70,7 @@ Calendar year: 2023
 $88,952.00
 
 ### Total Revenue by Month
-Omits transactions without date. 
+Omits transactions without date (460 of 10,000). 
 | Transaction Month | Revenue |
 |-------------------|-------------------|
 | January           | $7,242.00            |
@@ -89,7 +89,7 @@ Omits transactions without date.
 ![Revenue by Month](reports/figures/revenue_by_month.png)
 
 ### Total Revenue by Location
-Omits transactions without location.
+Omits transactions without location (3,961 of 10,000).
 | Location  | Revenue |
 |-----------|---------------------|
 | In-store  | $27,127.00          |
@@ -104,7 +104,7 @@ $8.93
 
 
 ### Most Popular Items by Units Sold
-Omits transactions without item.
+Omits transactions without item (969 of 10,000).
 | Item      | Units Sold |
 |-----------|--------------|
 | Coffee    | 3,534        |
@@ -119,14 +119,14 @@ Omits transactions without item.
 ![Popular Items](reports/figures/item_popularity.png)
 
 ### Items Sold by Location
-Omits transactions without location.
+Omits transactions without location (3,961 of 10,000).
 | Location | Salad | Sandwich | Juice | Tea  | Cake | Cookie | Coffee | Smoothie |
 | -------- | ----- | -------- | ----- | ---- | ---- | ------ | ------ | -------- | 
 | In-store | 1132  | 1127     | 1103  | 1012 | 986  | 972    | 970    | 953      | 
 | Takeaway | 1014  | 1049     | 992   | 1014 | 1047 | 1090   | 1091   | 920      | 
 
 ### Common Payment Methods by Number of Sales
-Omits transactions without payment method.
+Omits transactions without payment method (3,178 of 10,000).
 | Payment Method | Number of Sales |
 | -------------- | --------------- |
 | Digital Wallet | 2,291           |
