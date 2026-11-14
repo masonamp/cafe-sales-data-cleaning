@@ -29,28 +29,29 @@ This project uses:
 
 ### Raw Data Issues
 * Mixed datatypes.
-* Many sentinel NULL values: instances of `ERROR`, `UNKNOWN`, `None`, and ` ` that should be NULLs.
+* Many sentinel NULL values: instances of `ERROR`, `UNKNOWN`, `None`, and blank values that should be NULLs.
 * Missing data: various cells missing data across all columns. 
 
 ### Cleaning Performed
-* Standardize data types. 
-* Replace instances of`ERROR`, `UNKNOWN`, `None`, and ` ` with true NULLs.
-* Calculate `total_spent` from `quantity` and `price_per_unit` to fill missing values or override incorrect values.
-* Calculate `quantity` and `price_per_unit` from the other respectively and `total_spent` only to fill missing values. 
+* Standardize data types.
+* Replace instances of `ERROR`, `UNKNOWN`, `None`, and blank values with true NULLs.
+* Fill missing `total_spent` from `quantity` and `price_per_unit`.
+* Fill missing `quantity` or `price_per_unit` using the other two values, without overwriting existing values.
 * Remove any duplicate entries (in this case each entry and primary key is unique).
-* Add `transaction_year`, `transaction_month`, and `transaction_day` columns for later analysis. 
+* Add `transaction_year`, `transaction_month`, and `transaction_day` columns for later analysis.
 
 ### Cleaning Outcome
-* All datatypes standardized. 
-* All null values represented by true NULLs (3256 sentinel values converted).
-* Recovered 1398 values from `quantity`, `price_per_unit`, and  `total_spent` calculations. 
-* Removed 0 duplicate entries. 
+* All datatypes standardized.
+* All null values represented by true NULLs (3,256 sentinel values converted).
+* Recovered 1,398 values from `quantity`, `price_per_unit`, and `total_spent` calculations.
+* Removed 0 duplicate entries.
 * Added `transaction_year`, `transaction_month`, and `transaction_day` fields for all entries that have a `transaction_date`.
+* Validated consistency: of 8,544 rows with `quantity`, `price_per_unit`, and `total_spent` all present, 0 had a total that disagreed with quantity × price.
 * Analysis ready (note that rows with one or more NULLs are retained in this set).
 
 
 ## Light Analysis
-Calendar year: 2013
+Calendar year: 2023
 ### Total Revenue
 $88,952.00
 
@@ -75,7 +76,7 @@ Omits transactions without date.
 
 ### Total Revenue by Location
 Omits transactions without location.
- Location  | Revenue |
+| Location  | Revenue |
 |-----------|---------------------|
 | In-store  | $27,127.00          |
 | Takeaway  | $26,487.50          |
@@ -111,7 +112,7 @@ Omits transactions without location.
 | Takeaway | 1014  | 1049     | 992   | 1014 | 1047 | 1090   | 1091   | 920      | 
 
 ### Common Payment Methods by Number of Sales
-Omits transactions without payement method.
+Omits transactions without payment method.
 | Payment Method | Number of Sales |
 | -------------- | --------------- |
 | Digital Wallet | 2,291           |
